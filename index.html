@@ -16,43 +16,12 @@
         }
         
         body {
-            background: linear-gradient(135deg, #a6d1ff 0%, #c2e9fb 100%);
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 20px;
-            position: relative;
-            overflow-x: hidden;
-        }
-        
-        /* 落叶动画效果 */
-        .leaf {
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            background-color: #ffd700;
-            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-            opacity: 0.7;
-            animation: falling linear infinite;
-            z-index: 0;
-        }
-        
-        @keyframes falling {
-            0% {
-                transform: translateY(-100px) rotate(0deg);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.7;
-            }
-            90% {
-                opacity: 0.7;
-            }
-            100% {
-                transform: translateY(100vh) rotate(360deg);
-                opacity: 0;
-            }
         }
         
         .container {
@@ -60,47 +29,13 @@
             max-width: 1400px;
             display: flex;
             flex-direction: column;
-            gap: 25px;
-            position: relative;
-            z-index: 1;
-        }
-        
-        /* 這裡是新增的顏色設定 */
-        #activeUsers,
-        #activeUsers + .stat-label {
-            color: #ffd900; /* 王者用戶 */
-        }
-
-        #activeUser4,
-        #activeUser4 + .stat-label {
-            color: #9035F8; /* 鑽石用戶 */
-        }
-
-        #activeUser3,
-        #activeUser3 + .stat-label {
-            color: #75c8ff; /* 鉑金用戶 */
-        }
-
-        #activeUser2,
-        #activeUser2 + .stat-label {
-            color: #ff8904; /* 黃金用戶 */
-        }
-
-        #activeUser1,
-        #activeUser1 + .stat-label {
-            color: #5fecfc; /* 白銀用戶 */
-        }
-
-        #activeUser0,
-        #activeUser0 + .stat-label {
-            color: brown; /* 青銅用戶 */
+            gap: 20px;
         }
         
         .header {
             text-align: center;
             color: white;
             margin-bottom: 20px;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
         }
         
         .header h1 {
@@ -114,40 +49,16 @@
             opacity: 0.9;
         }
         
-        /* 玻璃水滴型卡片设计 */
         .card {
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 20px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             padding: 30px;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-        
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(135deg, rgba(37, 117, 252, 0.5) 0%, rgba(106, 17, 203, 0.5) 100%);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.4s ease;
+            transition: transform 0.3s ease;
         }
         
         .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-        }
-        
-        .card:hover::before {
-            transform: scaleX(1);
+            transform: translateY(-5px);
         }
         
         .card-header {
@@ -155,18 +66,13 @@
             align-items: center;
             margin-bottom: 25px;
             padding-bottom: 15px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            border-bottom: 1px solid #eee;
         }
         
         .card-header i {
             font-size: 24px;
             margin-right: 15px;
             color: #2575fc;
-            transition: transform 0.3s ease;
-        }
-        
-        .card:hover .card-header i {
-            transform: scale(1.1);
         }
         
         .card-header h2 {
@@ -176,7 +82,7 @@
         
         .login-section {
             display: flex;
-            gap: 25px;
+            gap: 20px;
             flex-wrap: wrap;
         }
         
@@ -196,83 +102,39 @@
             color: #555;
         }
         
-        /* 玻璃水滴型输入框 */
         .form-control {
             width: 100%;
             padding: 12px 15px;
-            background: rgba(255, 255, 255, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            border-radius: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
             font-size: 16px;
             transition: all 0.3s;
-            backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(5px);
-            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
         }
         
         .form-control:focus {
-            border-color: rgba(37, 117, 252, 0.7);
-            box-shadow: 0 0 0 3px rgba(37, 117, 252, 0.2), inset 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-color: #2575fc;
+            box-shadow: 0 0 0 3px rgba(37, 117, 252, 0.1);
             outline: none;
-            background: rgba(255, 255, 255, 0.5);
         }
         
-        /* 层次感按钮设计 */
         .btn {
             display: inline-block;
             padding: 12px 25px;
-            background: linear-gradient(135deg, #2575fc 0%, #6a11cb 100%);
+            background: #2575fc;
             color: white;
             border: none;
-            border-radius: 15px;
+            border-radius: 8px;
             font-size: 16px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s;
             text-align: center;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(37, 117, 252, 0.3);
-        }
-        
-        .btn::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 5px;
-            height: 5px;
-            background: rgba(255, 255, 255, 0.5);
-            opacity: 0;
-            border-radius: 100%;
-            transform: scale(1, 1) translate(-50%);
-            transform-origin: 50% 50%;
-        }
-        
-        .btn:hover::after {
-            animation: ripple 1s ease-out;
-        }
-        
-        @keyframes ripple {
-            0% {
-                transform: scale(0, 0);
-                opacity: 0.5;
-            }
-            100% {
-                transform: scale(20, 20);
-                opacity: 0;
-            }
         }
         
         .btn:hover {
-            background: linear-gradient(135deg, #1a68e8 0%, #5a0fb5 100%);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(37, 117, 252, 0.4);
-        }
-        
-        .btn:active {
-            transform: translateY(-1px);
-            box-shadow: 0 3px 10px rgba(37, 117, 252, 0.4);
+            background: #1a68e8;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
         
         .btn-block {
@@ -281,82 +143,64 @@
         }
         
         .btn-success {
-            background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
-            box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3);
+            background: #2ecc71;
         }
         
         .btn-success:hover {
-            background: linear-gradient(135deg, #27ae60 0%, #219955 100%);
-            box-shadow: 0 6px 20px rgba(46, 204, 113, 0.4);
+            background: #27ae60;
         }
         
         .btn-danger {
-            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
-            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+            background: #e74c3c;
         }
         
         .btn-danger:hover {
-            background: linear-gradient(135deg, #c0392b 0%, #a93226 100%);
-            box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+            background: #c0392b;
         }
         
         .btn-warning {
-            background: linear-gradient(135deg, #f39c12 0%, #d35400 100%);
-            box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3);
+            background: #f39c12;
         }
         
         .btn-warning:hover {
-            background: linear-gradient(135deg, #d35400 0%, #ba4a00 100%);
-            box-shadow: 0 6px 20px rgba(243, 156, 18, 0.4);
+            background: #d35400;
         }
         
         .btn-info {
-            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
-            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+            background: #3498db;
         }
         
         .btn-info:hover {
-            background: linear-gradient(135deg, #2980b9 0%, #2471a3 100%);
-            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+            background: #2980b9;
         }
         
         .btn-secondary {
-            background: linear-gradient(135deg, #95a5a6 0%, #7f8c8d 100%);
-            box-shadow: 0 4px 15px rgba(149, 165, 166, 0.3);
+            background: #95a5a6;
         }
         
         .btn-secondary:hover {
-            background: linear-gradient(135deg, #7f8c8d 0%, #6c7a7d 100%);
-            box-shadow: 0 6px 20px rgba(149, 165, 166, 0.4);
+            background: #7f8c8d;
         }
         
         .barcode-scan {
             text-align: center;
             padding: 20px;
-            border: 2px dashed rgba(255, 255, 255, 0.5);
-            border-radius: 15px;
+            border: 2px dashed #ddd;
+            border-radius: 8px;
             margin-bottom: 20px;
             cursor: pointer;
             transition: all 0.3s;
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(5px);
         }
         
         .barcode-scan:hover {
-            border-color: rgba(37, 117, 252, 0.7);
-            background: rgba(37, 117, 252, 0.1);
+            border-color: #2575fc;
+            background: rgba(37, 117, 252, 0.05);
         }
         
         .barcode-scan i {
             font-size: 48px;
             color: #2575fc;
             margin-bottom: 15px;
-            transition: transform 0.3s ease;
-        }
-        
-        .barcode-scan:hover i {
-            transform: scale(1.1);
         }
         
         .barcode-scan p {
@@ -369,18 +213,14 @@
         }
         
         .user-info {
-            background: linear-gradient(135deg, rgba(37, 117, 252, 0.7) 0%, rgba(106, 17, 203, 0.7) 100%);
+            background: linear-gradient(135deg, #2575fc 0%, #6a11cb 100%);
             color: white;
-            padding: 25px;
-            border-radius: 15px;
+            padding: 20px;
+            border-radius: 10px;
             margin-bottom: 25px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            animation: fadeIn 0.5s ease;
-            backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(5px);
         }
         
         .user-info h3 {
@@ -395,7 +235,7 @@
         
         .tabs {
             display: flex;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            border-bottom: 1px solid #ddd;
             margin-bottom: 20px;
             flex-wrap: wrap;
         }
@@ -405,19 +245,16 @@
             cursor: pointer;
             border-bottom: 3px solid transparent;
             transition: all 0.3s;
-            border-radius: 8px 8px 0 0;
         }
         
         .tab.active {
-            border-bottom: 3px solid rgba(37, 117, 252, 0.7);
+            border-bottom: 3px solid #2575fc;
             color: #2575fc;
             font-weight: 600;
-            background: rgba(255, 255, 255, 0.2);
         }
         
         .tab-content {
             display: none;
-            animation: fadeIn 0.5s ease;
         }
         
         .tab-content.active {
@@ -432,40 +269,29 @@
         }
         
         .prize-card {
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 15px;
+            border: 1px solid #eee;
+            border-radius: 10px;
             padding: 20px;
             text-align: center;
             transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(5px);
         }
         
         .prize-card:hover {
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.3);
         }
         
         .prize-image {
             width: 100%;
             height: 150px;
-            background: rgba(245, 245, 245, 0.5);
-            border-radius: 12px;
+            background: #f5f5f5;
+            border-radius: 8px;
             margin-bottom: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 48px;
             color: #2575fc;
-            transition: transform 0.3s ease;
-        }
-        
-        .prize-card:hover .prize-image {
-            transform: scale(1.05);
         }
         
         .prize-name {
@@ -492,7 +318,7 @@
             min-width: 200px;
         }
         
-        .users-table, .history-table, .prizes-table, .leaderboard-table {
+        .users-table, .history-table, .prizes-table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
@@ -500,22 +326,20 @@
         
         .users-table th, .users-table td,
         .history-table th, .history-table td,
-        .prizes-table th, .prizes-table td,
-        .leaderboard-table th, .leaderboard-table td {
+        .prizes-table th, .prizes-table td {
             padding: 12px 15px;
             text-align: left;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-            transition: background-color 0.2s;
+            border-bottom: 1px solid #eee;
         }
         
-        .users-table th, .history-table th, .prizes-table th, .leaderboard-table th {
-            background: rgba(248, 249, 250, 0.5);
+        .users-table th, .history-table th, .prizes-table th {
+            background: #f8f9fa;
             font-weight: 600;
             color: #555;
         }
         
-        .users-table tr:hover, .history-table tr:hover, .prizes-table tr:hover, .leaderboard-table tr:hover {
-            background: rgba(248, 249, 250, 0.3);
+        .users-table tr:hover, .history-table tr:hover, .prizes-table tr:hover {
+            background: #f8f9fa;
         }
         
         .action-btn {
@@ -523,27 +347,22 @@
             margin-right: 5px;
             color: white;
             border: none;
-            border-radius: 8px;
+            border-radius: 4px;
             cursor: pointer;
             transition: all 0.3s;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
         
         .action-btn:hover {
             opacity: 0.9;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
         }
         
         .logout-btn {
-            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            background: #e74c3c;
             margin-top: 20px;
-            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
         }
         
         .logout-btn:hover {
-            background: linear-gradient(135deg, #c0392b 0%, #a93226 100%);
-            box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+            background: #c0392b;
         }
         
         .notification {
@@ -553,13 +372,10 @@
             padding: 15px 25px;
             background: #2ecc71;
             color: white;
-            border-radius: 12px;
+            border-radius: 8px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             display: none;
             z-index: 1000;
-            animation: slideInRight 0.3s ease, fadeOut 0.5s ease 2.5s forwards;
-            backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(5px);
         }
         
         .modal {
@@ -573,22 +389,17 @@
             z-index: 2000;
             justify-content: center;
             align-items: center;
-            animation: fadeIn 0.3s ease;
         }
         
         .modal-content {
-            background: rgba(255, 255, 255, 0.2);
+            background: white;
             padding: 30px;
-            border-radius: 20px;
+            border-radius: 10px;
             width: 90%;
             max-width: 600px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             max-height: 90vh;
             overflow-y: auto;
-            animation: scaleIn 0.3s ease;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
         }
         
         .modal-header {
@@ -597,7 +408,7 @@
             align-items: center;
             margin-bottom: 20px;
             padding-bottom: 15px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            border-bottom: 1px solid #eee;
         }
         
         .modal-header h3 {
@@ -611,7 +422,6 @@
             font-size: 24px;
             cursor: pointer;
             color: #777;
-            transition: color 0.3s;
         }
         
         .close-btn:hover {
@@ -620,16 +430,9 @@
         
         .history-item {
             padding: 15px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            border-bottom: 1px solid #eee;
             display: flex;
             justify-content: space-between;
-            transition: background-color 0.2s;
-            border-radius: 10px;
-            margin-bottom: 5px;
-        }
-        
-        .history-item:hover {
-            background-color: rgba(248, 249, 250, 0.3);
         }
         
         .history-item:last-child {
@@ -652,15 +455,15 @@
             text-align: center;
             margin: 20px 0;
             padding: 15px;
-            background: rgba(248, 249, 250, 0.5);
-            border-radius: 12px;
+            background: #f8f9fa;
+            border-radius: 8px;
         }
         
         .barcode-container canvas {
             max-width: 100%;
             height: auto;
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            border-radius: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
             background: white;
         }
         
@@ -680,8 +483,8 @@
         #scanner-container {
             width: 100%;
             height: 300px;
-            background: rgba(245, 245, 245, 0.5);
-            border-radius: 12px;
+            background: #f5f5f5;
+            border-radius: 8px;
             overflow: hidden;
             position: relative;
         }
@@ -737,29 +540,21 @@
             margin-bottom: 15px;
         }
         
-        /* 玻璃水滴型登录选项按钮 */
         .login-option-btn {
             flex: 1;
             padding: 10px;
-            background: rgba(255, 255, 255, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 12px;
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 8px;
             cursor: pointer;
             text-align: center;
             transition: all 0.3s;
-            backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(5px);
         }
         
         .login-option-btn.active {
-            background: rgba(37, 117, 252, 0.3);
+            background: #2575fc;
             color: white;
-            border-color: rgba(37, 117, 252, 0.5);
-        }
-        
-        .login-option-btn:hover {
-            background: rgba(37, 117, 252, 0.2);
-            transform: translateY(-2px);
+            border-color: #2575fc;
         }
         
         .search-box {
@@ -792,19 +587,10 @@
         }
         
         .stat-card {
-            background: rgba(255, 255, 255, 0.2);
+            background: #f8f9fa;
             padding: 20px;
-            border-radius: 15px;
+            border-radius: 8px;
             text-align: center;
-            transition: transform 0.3s ease;
-            backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-        
-        .stat-card:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.3);
         }
         
         .stat-value {
@@ -821,138 +607,16 @@
         .reason-select {
             width: 100%;
             padding: 10px;
-            background: rgba(255, 255, 255, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            border-radius: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
             margin-bottom: 10px;
-            backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(5px);
         }
         
         .reason-input {
             width: 100%;
             padding: 10px;
-            background: rgba(255, 255, 255, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            border-radius: 12px;
-            backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(5px);
-        }
-        
-        .user-tier {
-            display: inline-block;
-            padding: 4px 8px;
-            border-radius: 12px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            margin-left: 8px;
-        }
-        
-        .tier-king {
-            background-color: #ffd900;
-            color: #000;
-        }
-        
-        .tier-diamond {
-            background-color: #9035F8;
-            color: white;
-        }
-        
-        .tier-platinum {
-            background-color: #75c8ff;
-            color: #000;
-        }
-        
-        .tier-gold {
-            background-color: #ff8904;
-            color: white;
-        }
-        
-        .tier-silver {
-            background-color: #5fecfc;
-            color: #000;
-        }
-        
-        .tier-bronze {
-            background-color: brown;
-            color: white;
-        }
-        
-        /* 排行榜樣式 */
-        .leaderboard-container {
-            display: flex;
-            gap: 25px;
-            margin-top: 20px;
-        }
-        
-        .leaderboard-table-container {
-            flex: 2;
-        }
-        
-        .pie-chart-container {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background: rgba(248, 249, 250, 0.5);
-            border-radius: 15px;
-            padding: 20px;
-            backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(5px);
-        }
-        
-        .pie-chart {
-            width: 250px;
-            height: 250px;
-            position: relative;
-        }
-        
-        .pie-chart canvas {
-            width: 100%;
-            height: 100%;
-        }
-        
-        .pie-legend {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-        
-        .legend-item {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            font-size: 0.9rem;
-        }
-        
-        .legend-color {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-        }
-        
-        /* 動畫定義 */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        @keyframes slideInRight {
-            from { transform: translateX(100%); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
-        }
-        
-        @keyframes fadeOut {
-            from { opacity: 1; }
-            to { opacity: 0; }
-        }
-        
-        @keyframes scaleIn {
-            from { transform: scale(0.9); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
+            border: 1px solid #ddd;
+            border-radius: 5px;
         }
         
         @media (max-width: 768px) {
@@ -968,7 +632,7 @@
                 grid-template-columns: 1fr;
             }
             
-            .users-table, .history-table, .prizes-table, .leaderboard-table {
+            .users-table, .history-table, .prizes-table {
                 display: block;
                 overflow-x: auto;
             }
@@ -994,22 +658,10 @@
             .user-stats {
                 grid-template-columns: 1fr;
             }
-            
-            .leaderboard-container {
-                flex-direction: column;
-            }
-            
-            .pie-chart {
-                width: 200px;
-                height: 200px;
-            }
         }
     </style>
 </head>
 <body>
-    <!-- 落叶动画元素 -->
-    <div id="leaves-container"></div>
-    
     <div class="container">
         <div class="header">
             <h1>明馬二樓宿舍積分兌換</h1>
@@ -1103,12 +755,8 @@
                     <h3 id="dashboardUserName">张三</h3>
                     <p>用戶編號: <span id="dashboardUserId">U1001</span></p>
                     <p>QRcode編碼: <span id="dashboardUserBarcode">BARCODE001</span></p>
-                    <p>段位: <span id="dashboardUserTier">青銅</span></p>
                 </div>
-                <div>
-                    <div class="points" id="dashboardUserPoints">1500</div>
-                    <div style="text-align: right;">累積積分: <span id="dashboardUserTotalPoints">2500</span></div>
-                </div>
+                <div class="points" id="dashboardUserPoints">1500</div>
             </div>
             
             <div class="user-barcode">
@@ -1119,7 +767,6 @@
             <div class="tabs">
                 <div class="tab active" data-tab="prizes">獎品兌換</div>
                 <div class="tab" data-tab="history">積分歷史</div>
-                <div class="tab" data-tab="leaderboard">排行榜</div>
             </div>
             
             <div class="tab-content active" id="prizes-tab">
@@ -1133,37 +780,6 @@
                 <h3 style="margin-bottom: 15px;">積分歷史紀錄</h3>
                 <div id="userHistoryContent">
                     <!-- 用户积分历史将通过JavaScript动态生成 -->
-                </div>
-            </div>
-            
-            <div class="tab-content" id="leaderboard-tab">
-                <h3 style="margin-bottom: 15px;">歷史積分排行榜</h3>
-                <div class="leaderboard-container">
-                    <div class="leaderboard-table-container">
-                        <table class="leaderboard-table">
-                            <thead>
-                                <tr>
-                                    <th>排名</th>
-                                    <th>用戶姓名</th>
-                                    <th>用戶編號</th>
-                                    <th>累積積分</th>
-                                    <th>段位</th>
-                                </tr>
-                            </thead>
-                            <tbody id="userLeaderboardBody">
-                                <!-- 排行榜数据将通过JavaScript动态生成 -->
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="pie-chart-container">
-                        <h4>段位分布</h4>
-                        <div class="pie-chart">
-                            <canvas id="tierPieChart"></canvas>
-                        </div>
-                        <div class="pie-legend" id="pieLegend">
-                            <!-- 图例将通过JavaScript动态生成 -->
-                        </div>
-                    </div>
                 </div>
             </div>
             
@@ -1181,7 +797,6 @@
                 <div class="tab active" data-tab="users">用戶管理</div>
                 <div class="tab" data-tab="prizes-admin">獎品管理</div>
                 <div class="tab" data-tab="history-admin">積分歷史</div>
-                <div class="tab" data-tab="leaderboard-admin">排行榜</div>
                 <div class="tab" data-tab="system-admin">系統管理</div>
             </div>
             
@@ -1196,28 +811,12 @@
                         <div class="stat-label">總積分</div>
                     </div>
                     <div class="stat-card">
+                        <div class="stat-value" id="avgPoints">0</div>
+                        <div class="stat-label">平均積分</div>
+                    </div>
+                    <div class="stat-card">
                         <div class="stat-value" id="activeUsers">0</div>
-                        <div class="stat-label">👑👑👑王者用戶🏅️🏅️🏅️</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-value" id="activeUser4">0</div>
-                        <div class="stat-label">💎鑽石用戶💎</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-value" id="activeUser3">0</div>
-                        <div class="stat-label">💍鉑金用戶💍</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-value" id="activeUser2">0</div>
-                        <div class="stat-label">✨黃金用戶✨</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-value" id="activeUser1">0</div>
-                        <div class="stat-label">🥈白銀用戶🥈</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-value" id="activeUser0">0</div>
-                        <div class="stat-label">.🔥青銅用戶🔥.</div>
+                        <div class="stat-label">活躍用戶</div>
                     </div>
                 </div>
                 
@@ -1237,9 +836,9 @@
                         <select id="pointsReason" class="reason-select">
                             <option value="">-- 選擇原因 --</option>
                             <option value="任務獎勵">任務獎勵</option>
-                            <option value="活動獎勵">活動獎勵</option>
+                            <option value="活活動獎勵">活動獎勵</option>
                             <option value="挑戰獎勵">挑戰獎勵</option>
-                            <option value="閱讀獎勵">閱讀獎勵</option>
+                            <option value="推薦獎勵">推薦獎勵</option>
                             <option value="管理員調整">管理員調整</option>
                             <option value="其他">其他</option>
                         </select>
@@ -1258,8 +857,7 @@
                             <th>姓名</th>
                             <th>QRcode編碼</th>
                             <th>當前積分</th>
-                            <th>累積積分</th>
-                            <th>段位</th>
+                            <th>用戶類型</th>
                             <th>操作</th>
                         </tr>
                     </thead>
@@ -1319,37 +917,6 @@
                 <h3>積分歷史紀錄</h3>
                 <div id="adminHistoryContent">
                     <!-- 管理员查看的积分历史将通过JavaScript动态生成 -->
-                </div>
-            </div>
-            
-            <div class="tab-content" id="leaderboard-admin-tab">
-                <h3 style="margin-bottom: 15px;">歷史積分排行榜</h3>
-                <div class="leaderboard-container">
-                    <div class="leaderboard-table-container">
-                        <table class="leaderboard-table">
-                            <thead>
-                                <tr>
-                                    <th>排名</th>
-                                    <th>用戶姓名</th>
-                                    <th>用戶編號</th>
-                                    <th>累積積分</th>
-                                    <th>段位</th>
-                                </tr>
-                            </thead>
-                            <tbody id="adminLeaderboardBody">
-                                <!-- 排行榜数据将通过JavaScript动态生成 -->
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="pie-chart-container">
-                        <h4>段位分布</h4>
-                        <div class="pie-chart">
-                            <canvas id="adminTierPieChart"></canvas>
-                        </div>
-                        <div class="pie-legend" id="adminPieLegend">
-                            <!-- 图例将通过JavaScript动态生成 -->
-                        </div>
-                    </div>
                 </div>
             </div>
             
@@ -1486,34 +1053,6 @@
     <div class="notification" id="notification"></div>
 
     <script>
-        // 创建落叶效果
-        function createLeaves() {
-            const leavesContainer = document.getElementById('leaves-container');
-            const leafCount = 15; // 落叶数量
-            
-            for (let i = 0; i < leafCount; i++) {
-                const leaf = document.createElement('div');
-                leaf.className = 'leaf';
-                
-                // 随机位置
-                const left = Math.random() * 100;
-                leaf.style.left = left + 'vw';
-                
-                // 随机大小
-                const size = 15 + Math.random() * 20;
-                leaf.style.width = size + 'px';
-                leaf.style.height = size + 'px';
-                
-                // 随机动画延迟和持续时间
-                const delay = Math.random() * 10;
-                const duration = 5 + Math.random() * 10;
-                leaf.style.animationDelay = delay + 's';
-                leaf.style.animationDuration = duration + 's';
-                
-                leavesContainer.appendChild(leaf);
-            }
-        }
-        
         // 用户数据存储
         let users = JSON.parse(localStorage.getItem('barcodePointsUsers')) || [
             { 
@@ -1521,8 +1060,6 @@
                 name: '张三', 
                 barcodeCode: 'USER001', 
                 points: 1500, 
-                totalPoints: 2500, // 新增：累積積分
-                tier: '鉑金', // 新增：段位
                 isAdmin: false 
             },
             { 
@@ -1530,8 +1067,6 @@
                 name: '李四', 
                 barcodeCode: 'USER002', 
                 points: 800, 
-                totalPoints: 1200, // 新增：累積積分
-                tier: '黃金', // 新增：段位
                 isAdmin: false 
             },
             { 
@@ -1539,17 +1074,13 @@
                 name: '王五', 
                 barcodeCode: 'USER003', 
                 points: 2200, 
-                totalPoints: 3200, // 新增：累積積分
-                tier: '鑽石', // 新增：段位
                 isAdmin: false 
             },
             { 
-                id: 'wwlwcf002', 
-                name: '管理员', 
-                barcodeCode: 'wwlwcf002', 
+                id: 'ADMIN001', 
+                name: '系统管理员', 
+                barcodeCode: 'ADMIN001', 
                 points: 0, 
-                totalPoints: 0, // 新增：累積積分
-                tier: '', // 新增：段位
                 isAdmin: true 
             }
         ];
@@ -1569,56 +1100,13 @@
             { userId: 'U1001', timestamp: new Date('2023-10-01 09:30:00').getTime(), pointsChange: 100, reason: '签到奖励' },
             { userId: 'U1001', timestamp: new Date('2023-10-05 14:20:00').getTime(), pointsChange: -200, reason: '兑换咖啡券' },
             { userId: 'U1001', timestamp: new Date('2023-10-10 11:15:00').getTime(), pointsChange: 500, reason: '活动奖励' },
-            { userId: 'U1001', timestamp: new Date('2023-10-15 15:40:00').getTime(), pointsChange: 800, reason: '管理员调整' },
             { userId: 'U1002', timestamp: new Date('2023-10-02 10:45:00').getTime(), pointsChange: 100, reason: '签到奖励' },
             { userId: 'U1002', timestamp: new Date('2023-10-07 16:30:00').getTime(), pointsChange: 300, reason: '完成任务' },
             { userId: 'U1003', timestamp: new Date('2023-10-03 08:20:00').getTime(), pointsChange: 100, reason: '签到奖励' },
             { userId: 'U1003', timestamp: new Date('2023-10-08 13:10:00').getTime(), pointsChange: 1000, reason: '推荐用户奖励' },
+            { userId: 'U1001', timestamp: new Date('2023-10-15 15:40:00').getTime(), pointsChange: 800, reason: '管理员调整' },
             { userId: 'U1003', timestamp: new Date('2023-10-12 17:25:00').getTime(), pointsChange: 400, reason: '活动奖励' }
         ];
-        
-        // 段位划分标准（基于累积积分）
-        const tierThresholds = [
-            { name: '青銅', min: 0, max: 299, color: 'brown' },
-            { name: '白銀', min: 300, max: 599, color: '#5fecfc' },
-            { name: '黃金', min: 600, max: 899, color: '#ff8904' },
-            { name: '鉑金', min: 900, max: 1199, color: '#75c8ff' },
-            { name: '鑽石', min: 1200, max: 1499, color: '#9035F8' },
-            { name: '王者', min: 1500, max: Infinity, color: '#ffd900' }
-        ];
-        
-        // 计算用户段位
-        function calculateUserTier(totalPoints) {
-            for (const tier of tierThresholds) {
-                if (totalPoints >= tier.min && totalPoints <= tier.max) {
-                    return tier.name;
-                }
-            }
-            return '青銅';
-        }
-        
-        // 获取段位对应的CSS类名
-        function getTierClass(tierName) {
-            switch(tierName) {
-                case '王者': return 'tier-king';
-                case '鑽石': return 'tier-diamond';
-                case '鉑金': return 'tier-platinum';
-                case '黃金': return 'tier-gold';
-                case '白銀': return 'tier-silver';
-                case '青銅': return 'tier-bronze';
-                default: return 'tier-bronze';
-            }
-        }
-        
-        // 获取段位对应的颜色
-        function getTierColor(tierName) {
-            for (const tier of tierThresholds) {
-                if (tier.name === tierName) {
-                    return tier.color;
-                }
-            }
-            return 'brown';
-        }
         
         // *****
         const adminPassword = 'admin123';
@@ -1657,12 +1145,6 @@
         const userIdInput = document.getElementById('userIdInput');
         const userBarcodeDisplay = document.getElementById('userBarcodeDisplay');
         const notification = document.getElementById('notification');
-        const userLeaderboardBody = document.getElementById('userLeaderboardBody');
-        const adminLeaderboardBody = document.getElementById('adminLeaderboardBody');
-        const tierPieChart = document.getElementById('tierPieChart');
-        const adminTierPieChart = document.getElementById('adminTierPieChart');
-        const pieLegend = document.getElementById('pieLegend');
-        const adminPieLegend = document.getElementById('adminPieLegend');
         
         // 登录选项切换
         const userCodeLoginBtn = document.getElementById('userCodeLoginBtn');
@@ -1735,9 +1217,6 @@
 
         // 初始化页面
         function initPage() {
-            // 创建落叶效果
-            createLeaves();
-            
             // 保存初始数据到localStorage
             saveDataToStorage();
             
@@ -1840,14 +1319,6 @@
                     user.points += pointsChange;
                     if (user.points < 0) user.points = 0;
                     
-                    // 如果是增加积分，同时增加累积积分
-                    if (pointsChange > 0) {
-                        user.totalPoints += pointsChange;
-                    }
-                    
-                    // 更新段位
-                    user.tier = calculateUserTier(user.totalPoints);
-                    
                     // 记录积分变更历史
                     pointsHistory.push({
                         userId: user.id,
@@ -1910,17 +1381,12 @@
                     return;
                 }
                 
-                // 计算段位
-                const userTier = calculateUserTier(userPoints);
-                
                 // 添加新用户
                 users.push({
                     id: userId,
                     name: userName,
                     barcodeCode: barcodeCode,
                     points: userPoints,
-                    totalPoints: userPoints, // 初始累积积分等于当前积分
-                    tier: userTier, // 初始段位
                     isAdmin: false
                 });
                 
@@ -2166,9 +1632,6 @@
                     // 如果切换到历史记录选项卡，渲染历史记录
                     if (tabId === 'history') {
                         renderUserHistory();
-                    } else if (tabId === 'leaderboard') {
-                        renderUserLeaderboard();
-                        renderTierPieChart(tierPieChart, pieLegend);
                     }
                 });
             });
@@ -2189,9 +1652,6 @@
                     // 如果切换到历史记录选项卡，渲染历史记录
                     if (tabId === 'history-admin') {
                         renderAdminHistory();
-                    } else if (tabId === 'leaderboard-admin') {
-                        renderAdminLeaderboard();
-                        renderTierPieChart(adminTierPieChart, adminPieLegend);
                     } else if (tabId === 'system-admin') {
                         updateSystemStats();
                     }
@@ -2341,9 +1801,6 @@
             document.getElementById('dashboardUserId').textContent = currentUser.id;
             document.getElementById('dashboardUserBarcode').textContent = currentUser.barcodeCode;
             document.getElementById('dashboardUserPoints').textContent = currentUser.points;
-            document.getElementById('dashboardUserTotalPoints').textContent = currentUser.totalPoints;
-            document.getElementById('dashboardUserTier').textContent = currentUser.tier;
-            document.getElementById('dashboardUserTier').className = 'user-tier ' + getTierClass(currentUser.tier);
             
             // 生成用户条形码 - 添加延迟
             setTimeout(() => {
@@ -2430,15 +1887,13 @@
             
             filteredUsers.forEach(user => {
                 const row = document.createElement('tr');
-                const tierClass = getTierClass(user.tier);
                 
                 row.innerHTML = `
                     <td>${user.id}</td>
                     <td>${user.name}</td>
                     <td>${user.barcodeCode}</td>
                     <td>${user.points}</td>
-                    <td>${user.totalPoints}</td>
-                    <td><span class="user-tier ${tierClass}">${user.tier}</span></td>
+                    <td>${user.isAdmin ? '管理員' : '普通用戶'}</td>
                     <td>
                         <button class="action-btn" style="background: #3498db;" onclick="selectUser('${user.id}')">选择</button>
                         ${!user.isAdmin ? 
@@ -2562,154 +2017,6 @@
             });
         }
         
-        // 渲染用户排行榜
-        function renderUserLeaderboard() {
-            userLeaderboardBody.innerHTML = '';
-            
-            // 获取普通用户并按累积积分排序
-            const sortedUsers = users
-                .filter(u => !u.isAdmin)
-                .sort((a, b) => b.totalPoints - a.totalPoints);
-            
-            if (sortedUsers.length === 0) {
-                userLeaderboardBody.innerHTML = '<tr><td colspan="5" style="text-align: center;">暂无用户数据</td></tr>';
-                return;
-            }
-            
-            sortedUsers.forEach((user, index) => {
-                const row = document.createElement('tr');
-                const tierClass = getTierClass(user.tier);
-                
-                row.innerHTML = `
-                    <td>${index + 1}</td>
-                    <td>${user.name}</td>
-                    <td>${user.id}</td>
-                    <td>${user.totalPoints}</td>
-                    <td><span class="user-tier ${tierClass}">${user.tier}</span></td>
-                `;
-                
-                userLeaderboardBody.appendChild(row);
-            });
-        }
-        
-        // 渲染管理员排行榜
-        function renderAdminLeaderboard() {
-            adminLeaderboardBody.innerHTML = '';
-            
-            // 获取普通用户并按累积积分排序
-            const sortedUsers = users
-                .filter(u => !u.isAdmin)
-                .sort((a, b) => b.totalPoints - a.totalPoints);
-            
-            if (sortedUsers.length === 0) {
-                adminLeaderboardBody.innerHTML = '<tr><td colspan="5" style="text-align: center;">暂无用户数据</td></tr>';
-                return;
-            }
-            
-            sortedUsers.forEach((user, index) => {
-                const row = document.createElement('tr');
-                const tierClass = getTierClass(user.tier);
-                
-                row.innerHTML = `
-                    <td>${index + 1}</td>
-                    <td>${user.name}</td>
-                    <td>${user.id}</td>
-                    <td>${user.totalPoints}</td>
-                    <td><span class="user-tier ${tierClass}">${user.tier}</span></td>
-                `;
-                
-                adminLeaderboardBody.appendChild(row);
-            });
-        }
-        
-        // 渲染段位饼图
-        function renderTierPieChart(canvasElement, legendElement) {
-            // 统计各段位用户数量
-            const tierCounts = {};
-            tierThresholds.forEach(tier => {
-                tierCounts[tier.name] = 0;
-            });
-            
-            users.filter(u => !u.isAdmin).forEach(user => {
-                tierCounts[user.tier]++;
-            });
-            
-            // 过滤掉数量为0的段位
-            const filteredTiers = tierThresholds.filter(tier => tierCounts[tier.name] > 0);
-            
-            // 计算总数
-            const totalUsers = users.filter(u => !u.isAdmin).length;
-            
-            // 生成图例
-            legendElement.innerHTML = '';
-            filteredTiers.forEach(tier => {
-                const percentage = totalUsers > 0 ? ((tierCounts[tier.name] / totalUsers) * 100).toFixed(1) : 0;
-                const legendItem = document.createElement('div');
-                legendItem.className = 'legend-item';
-                legendItem.innerHTML = `
-                    <div class="legend-color" style="background-color: ${tier.color};"></div>
-                    <span>${tier.name}: ${tierCounts[tier.name]}人 (${percentage}%)</span>
-                `;
-                legendElement.appendChild(legendItem);
-            });
-            
-            // 绘制饼图
-            const ctx = canvasElement.getContext('2d');
-            const width = canvasElement.width;
-            const height = canvasElement.height;
-            const centerX = width / 2;
-            const centerY = height / 2;
-            const radius = Math.min(width, height) / 2 * 0.8;
-            
-            // 清除画布
-            ctx.clearRect(0, 0, width, height);
-            
-            // 如果没有数据，显示提示
-            if (totalUsers === 0) {
-                ctx.fillStyle = '#ccc';
-                ctx.font = '16px Arial';
-                ctx.textAlign = 'center';
-                ctx.fillText('暂无数据', centerX, centerY);
-                return;
-            }
-            
-            let startAngle = 0;
-            
-            // 绘制扇形
-            filteredTiers.forEach(tier => {
-                const sliceAngle = (2 * Math.PI * tierCounts[tier.name]) / totalUsers;
-                
-                ctx.beginPath();
-                ctx.moveTo(centerX, centerY);
-                ctx.arc(centerX, centerY, radius, startAngle, startAngle + sliceAngle);
-                ctx.closePath();
-                
-                ctx.fillStyle = tier.color;
-                ctx.fill();
-                
-                // 绘制分隔线
-                ctx.strokeStyle = 'white';
-                ctx.lineWidth = 2;
-                ctx.stroke();
-                
-                startAngle += sliceAngle;
-            });
-            
-            // 绘制中心空白圆
-            ctx.beginPath();
-            ctx.arc(centerX, centerY, radius * 0.5, 0, 2 * Math.PI);
-            ctx.fillStyle = 'white';
-            ctx.fill();
-            
-            // 绘制中心文字
-            ctx.fillStyle = '#333';
-            ctx.font = 'bold 16px Arial';
-            ctx.textAlign = 'center';
-            ctx.fillText('段位分布', centerX, centerY - 8);
-            ctx.font = '14px Arial';
-            ctx.fillText(`${totalUsers}人`, centerX, centerY + 10);
-        }
-        
         // 选择用户
         function selectUser(userId) {
             const user = users.find(u => u.id === userId);
@@ -2773,27 +2080,17 @@
             }
         }
         
-        // 更新用户统计信息 - 使用累积积分
+        // 更新用户统计信息
         function updateUserStats() {
             const totalUsers = users.filter(u => !u.isAdmin).length;
             const totalPoints = users.filter(u => !u.isAdmin).reduce((sum, user) => sum + user.points, 0);
-            
-            // 使用累积积分统计各段位用户数量
-            const activeUsers = users.filter(u => !u.isAdmin && u.totalPoints >= 1500).length;
-            const activeUser4 = users.filter(u => !u.isAdmin && u.totalPoints >= 1200 && u.totalPoints < 1500).length;
-            const activeUser3 = users.filter(u => !u.isAdmin && u.totalPoints >= 900 && u.totalPoints < 1200).length;
-            const activeUser2 = users.filter(u => !u.isAdmin && u.totalPoints >= 600 && u.totalPoints < 900).length;
-            const activeUser1 = users.filter(u => !u.isAdmin && u.totalPoints >= 300 && u.totalPoints < 600).length;
-            const activeUser0 = users.filter(u => !u.isAdmin && u.totalPoints < 300).length;
+            const avgPoints = totalUsers > 0 ? Math.round(totalPoints / totalUsers) : 0;
+            const activeUsers = users.filter(u => !u.isAdmin && u.points > 0).length;
             
             document.getElementById('totalUsers').textContent = totalUsers;
             document.getElementById('totalPoints').textContent = totalPoints;
+            document.getElementById('avgPoints').textContent = avgPoints;
             document.getElementById('activeUsers').textContent = activeUsers;
-            document.getElementById('activeUser4').textContent = activeUser4;
-            document.getElementById('activeUser3').textContent = activeUser3;
-            document.getElementById('activeUser2').textContent = activeUser2;
-            document.getElementById('activeUser1').textContent = activeUser1;
-            document.getElementById('activeUser0').textContent = activeUser0;
         }
         
         // 更新系统统计信息
@@ -2877,16 +2174,6 @@
                     
                     if (importedData.users && Array.isArray(importedData.users)) {
                         users = importedData.users;
-                        
-                        // 确保导入的用户数据有累积积分和段位字段
-                        users.forEach(user => {
-                            if (user.totalPoints === undefined) {
-                                user.totalPoints = user.points || 0;
-                            }
-                            if (user.tier === undefined) {
-                                user.tier = calculateUserTier(user.totalPoints);
-                            }
-                        });
                     }
                     
                     if (importedData.prizes && Array.isArray(importedData.prizes)) {
@@ -2958,12 +2245,10 @@
             if (confirm('确定要重置所有系統數據吗？此操作将删除所有用户、獎品和歷史紀錄，且不可恢复！')) {
                 users = [
                     { 
-                        id: 'wwlwcf002', 
-                        name: '管理员', 
-                        barcodeCode: 'wwlwcf002', 
+                        id: 'ADMIN001', 
+                        name: '系统管理員', 
+                        barcodeCode: 'ADMIN001', 
                         points: 0, 
-                        totalPoints: 0,
-                        tier: '',
                         isAdmin: true 
                     }
                 ];
